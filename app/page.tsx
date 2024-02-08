@@ -1,7 +1,8 @@
 import { request, gql } from 'graphql-request';
 import { graphql } from '@/typegen/gql';
 
-function getData() {
+async function getData() {
+  'use server';
   return request(process.env.COFACTS_API_URL ?? '', graphql(`
     query LoadAPIStats {
       allArticles: ListArticles {
