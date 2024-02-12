@@ -5,10 +5,10 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: process.env.COFACTS_API_URL,
-  documents: ["app/**/*.tsx"],
+  documents: ['app/**/*.tsx'],
   generates: {
     'typegen/': {
-      preset: "client",
+      preset: 'client',
       plugins: [],
       presetConfig: {
         fragmentMasking: false,
@@ -19,8 +19,8 @@ const config: CodegenConfig = {
         skipTypename: true,
         avoidOptionals: true,
       },
-    }
-  }
+    },
+  },
 };
 
 export default config;

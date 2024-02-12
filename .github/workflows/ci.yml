@@ -1,0 +1,23 @@
+name: CI test
+
+on:
+  # Triggers the workflow on push or pull request events but only for the dev branch
+  - pull_request
+  - push
+  # Allows you to run this workflow manually from the Actions tab
+  - workflow_dispatch
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+      - run: npm ci
+      # Running build would lint and check type
+      - run: npm run build
+        env:
+          COFACTS_API_URL: 'https://dev-api.cofacts.tw/graphql'
