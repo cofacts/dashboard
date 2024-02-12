@@ -1,9 +1,9 @@
-import { request } from "graphql-request";
-import { graphql } from "@/typegen/gql";
+import { request } from 'graphql-request';
+import { graphql } from '@/typegen/gql';
 
 async function getData() {
   return request(
-    process.env.COFACTS_API_URL ?? "",
+    process.env.COFACTS_API_URL ?? '',
     graphql(/* GraphQL */ `
       query LoadAPIStats {
         allArticles: ListArticles {
@@ -16,7 +16,7 @@ async function getData() {
           totalCount
         }
       }
-    `),
+    `)
   );
 }
 
