@@ -19,3 +19,5 @@ jobs:
       - run: npm ci
       # Running build would lint and check type
       - run: npm run build
+        env:
+          COFACTS_API_URL: ${{ env.COFACTS_API_URL }}
