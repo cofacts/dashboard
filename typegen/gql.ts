@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n    query LoadAPIStats {\n      allArticles: ListArticles {\n        totalCount\n      }\n      allRepliedArticles: ListArticles {\n        totalCount\n      }\n      articlesHasUsefulReplies: ListArticles {\n        totalCount\n      }\n    }\n  ": types.LoadApiStatsDocument,
+    "\n      query LoadAPIStats {\n        allArticles: ListArticles {\n          totalCount\n        }\n        allRepliedArticles: ListArticles {\n          totalCount\n        }\n        articlesHasUsefulReplies: ListArticles {\n          totalCount\n        }\n      }\n    ": types.LoadApiStatsDocument,
 };
 
 /**
@@ -33,7 +33,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query LoadAPIStats {\n      allArticles: ListArticles {\n        totalCount\n      }\n      allRepliedArticles: ListArticles {\n        totalCount\n      }\n      articlesHasUsefulReplies: ListArticles {\n        totalCount\n      }\n    }\n  "): (typeof documents)["\n    query LoadAPIStats {\n      allArticles: ListArticles {\n        totalCount\n      }\n      allRepliedArticles: ListArticles {\n        totalCount\n      }\n      articlesHasUsefulReplies: ListArticles {\n        totalCount\n      }\n    }\n  "];
+export function graphql(source: "\n      query LoadAPIStats {\n        allArticles: ListArticles {\n          totalCount\n        }\n        allRepliedArticles: ListArticles {\n          totalCount\n        }\n        articlesHasUsefulReplies: ListArticles {\n          totalCount\n        }\n      }\n    "): (typeof documents)["\n      query LoadAPIStats {\n        allArticles: ListArticles {\n          totalCount\n        }\n        allRepliedArticles: ListArticles {\n          totalCount\n        }\n        articlesHasUsefulReplies: ListArticles {\n          totalCount\n        }\n      }\n    "];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
