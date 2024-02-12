@@ -1,5 +1,7 @@
 # Cofacts Dashboard
 
+[![CI test](https://github.com/cofacts/dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/cofacts/dashboard/actions/workflows/ci.yml)
+
 Visualize the data of Cofacts fact-checking platform.
 
 ## Getting Started
