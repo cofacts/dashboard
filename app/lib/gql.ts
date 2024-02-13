@@ -7,6 +7,7 @@ export { graphql } from '@/typegen/gql';
  * @param variables - the variables for the operation
  * @param fetchOptions - the options for NextJS's fetch
  * @returns graphql-request's request result
+ * @see https://github.com/dotansimha/graphql-typed-document-node?tab=readme-ov-file#how-can-i-support-this-in-my-library
  */
 export function gql<TData = any, TVariables = Record<string, any>>(
   operation: TypedDocumentNode<TData, TVariables>,
