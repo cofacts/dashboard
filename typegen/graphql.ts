@@ -1390,10 +1390,12 @@ export type YdocVersion = {
   snapshot: Maybe<Scalars['String']['output']>;
 };
 
-export type LoadApiStatsQueryVariables = Exact<{ [key: string]: never; }>;
+export type LoadApiStatsQueryVariables = Exact<{
+  bar: Scalars['Boolean']['input'];
+}>;
 
 
 export type LoadApiStatsQuery = { allArticles: { totalCount: number } | null, allRepliedArticles: { totalCount: number } | null, articlesHasUsefulReplies: { totalCount: number } | null };
 
 
-export const LoadApiStatsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"LoadAPIStats"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"allArticles"},"name":{"kind":"Name","value":"ListArticles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"allRepliedArticles"},"name":{"kind":"Name","value":"ListArticles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"articlesHasUsefulReplies"},"name":{"kind":"Name","value":"ListArticles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}}]}}]} as unknown as DocumentNode<LoadApiStatsQuery, LoadApiStatsQueryVariables>;
+export const LoadApiStatsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"LoadAPIStats"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"bar"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"allArticles"},"name":{"kind":"Name","value":"ListArticles"},"directives":[{"kind":"Directive","name":{"kind":"Name","value":"skip"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"if"},"value":{"kind":"Variable","name":{"kind":"Name","value":"bar"}}}]}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"allRepliedArticles"},"name":{"kind":"Name","value":"ListArticles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"articlesHasUsefulReplies"},"name":{"kind":"Name","value":"ListArticles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}}]}}]} as unknown as DocumentNode<LoadApiStatsQuery, LoadApiStatsQueryVariables>;

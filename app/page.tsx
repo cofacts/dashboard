@@ -1,12 +1,10 @@
-import { request } from 'graphql-request';
-import { graphql } from '@/typegen/gql';
+import { gql, graphql } from '@/app/lib/gql';
 
 async function getData() {
-  return request(
-    process.env.COFACTS_API_URL ?? '',
+  return gql(
     graphql(/* GraphQL */ `
-      query LoadAPIStats {
-        allArticles: ListArticles {
+      query LoadAPIStats($bar: Boolean!) {
+        allArticles: ListArticles @skip(if: $bar) {
           totalCount
         }
         allRepliedArticles: ListArticles {
@@ -16,7 +14,9 @@ async function getData() {
           totalCount
         }
       }
-    `)
+    `),
+    { bar: false },
+    { next: { revalidate: 10 /* Only cache for 10 seconds */ } }
   );
 }
 
