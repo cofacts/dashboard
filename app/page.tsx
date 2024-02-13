@@ -7,10 +7,12 @@ async function getData() {
         allArticles: ListArticles @skip(if: $bar) {
           totalCount
         }
-        allRepliedArticles: ListArticles {
+        allRepliedArticles: ListArticles(filter: { replyCount: { GTE: 1 } }) {
           totalCount
         }
-        articlesHasUsefulReplies: ListArticles {
+        articlesHasUsefulReplies: ListArticles(
+          filter: { hasArticleReplyWithMorePositiveFeedback: true }
+        ) {
           totalCount
         }
       }
