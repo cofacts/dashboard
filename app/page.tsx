@@ -1,4 +1,4 @@
-import { gql, graphql } from '@/app/lib/gql';
+import { gql, graphql } from '@/lib/gql';
 
 async function getData() {
   return gql(
